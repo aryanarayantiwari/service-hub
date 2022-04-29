@@ -85,7 +85,7 @@ const Services = () => {
           </Link>
         </div>
         <div className=" flex flex-col items-center py-3 md:py-0.5 md:my-12">
-        <Link to="/book" state={{service:"Electrical"}} className=" flex flex-col items-center py-3 md:py-0.5 md:my-12 md:text-base text-sm text-center">
+        <Link to="/book" state={{service:"Electrician"}} className=" flex flex-col items-center py-3 md:py-0.5 md:my-12 md:text-base text-sm text-center">
           <img
             src="../images/electrical.png"
             alt="electrical"

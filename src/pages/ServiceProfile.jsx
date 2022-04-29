@@ -40,7 +40,6 @@ function ServiceProfile() {
   )} else {
     return(
     <IsSigned />
-
     )
   }
 }
