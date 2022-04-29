@@ -1,4 +1,7 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { toast } from 'react-toastify'
+import {ToastContainer} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 import AppContext from "../AppContext";
@@ -6,6 +9,17 @@ import { useContext } from "react";
 function OAuth() {
   const { signUpProvider, setIsSignedIn, handleCustomer } = useContext(AppContext)
   const navigate = useNavigate();
+
+  const notify = () => toast.error('Authentication Failed!', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    });
+
   const customerSignUp = async () => {
     try {
       const auth = getAuth();
@@ -18,6 +32,7 @@ function OAuth() {
         navigate('/home')
       }
     } catch (error) {
+      notify()
       console.log(error + "Could not Sign In");
     }
   };
@@ -33,6 +48,7 @@ function OAuth() {
       navigate('/serviceprofile')
       }
     } catch (error) {
+      notify()
       console.log(error + "Could not Sign In");
     }
   };
@@ -49,6 +65,7 @@ function OAuth() {
       navigate('/signup')
       }
     } catch (error) {
+      notify()
       console.log(error + "Could not Sign In");
     }
   };
@@ -78,6 +95,7 @@ function OAuth() {
         <FcGoogle size={42} />
         <h2>Sign Up with Google</h2>
       </button>
+      <ToastContainer />
     </div>
   );
 }

@@ -17,7 +17,7 @@ function AcceptBook({booking}) {
       <h4>{booking.date}, {booking.time}</h4>
       <div className="flex text-sm items-center justify-start space-x-2">
         <p className="text-gray-500">Address -</p>
-        <p className="">{booking.address}</p>
+        <p className="">{booking.address} ,{booking.location}</p>
       </div>
       <div className="w-full flex justify-around p-2 items-center text-blue-700 font-semibold">
         <div onClick={handleDelete} className="cursor-pointer hover:bg-blue-100 hover:rounded-md p-1">

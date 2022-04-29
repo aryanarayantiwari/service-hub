@@ -2,9 +2,12 @@ import {
   UserCircleIcon,
   CalendarIcon,
 } from "@heroicons/react/solid";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import FirestoreContext from "../../FirestoreContext";
 import Booking from "./Booking";
 function ServiceBookings() {
+  const {getPlumber} = useContext(FirestoreContext)
   return (
     <div>
       <nav className="text-white text-xl font-semibold flex bg-gray-800 py-3 justify-between px-2 items-center relative">
@@ -13,6 +16,7 @@ function ServiceBookings() {
         </Link>
         <div className="text-white text-sm">Professional</div>
       </nav>
+      {getPlumber()}
       <Booking />
       <div className="flex justify-around fixed bg-white bottom-0 w-full">
         <div className="flex flex-col items-center justify-center">

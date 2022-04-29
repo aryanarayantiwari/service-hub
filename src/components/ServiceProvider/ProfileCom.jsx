@@ -9,8 +9,10 @@ import {
 import { Link } from "react-router-dom";
 import {useContext} from "react"
 import AppContext from "../../AppContext";
+import FirestoreContext from "../../FirestoreContext";
 function ProfileCom() {
-  const { providerDetails, setIsSignedIn } = useContext(AppContext)
+  const { setIsSignedIn } = useContext(AppContext)
+  const {servicePerson} = useContext(FirestoreContext)
   const handleSignOut = () => {
     setIsSignedIn(false)
   }
@@ -23,9 +25,9 @@ function ProfileCom() {
           alt=""
         />
         <div className="ml-2 mt-2">
-          <p className="text-sm font-medium">{providerDetails.name}</p>
-          <p className="text-gray-500 text-xs">{providerDetails.profession} {providerDetails.profession && providerDetails.city ? 'in' : ""} {providerDetails.city}</p>
-          <p className="text-gray-500 text-xs">{providerDetails.email}</p>
+          <p className="text-sm font-medium">{servicePerson.name}</p>
+          <p className="text-gray-500 text-xs">{servicePerson.profession}  in  {servicePerson.city}</p>
+          <p className="text-gray-500 text-xs">{servicePerson.email}</p>
         </div>
       </div>
       <div className="flex cursor-pointer w-52 rounded-md py-1 hover:bg-blue-200 mx-2 px-2 mb-2 items-center text-lg font-semibold">

@@ -25,7 +25,7 @@ function UserBookings() {
       return (
         <div>
           <CustomNav />
-          <div className="flex justify-center items-center font-semibold text-xl h-screen">NO Bookings Found!</div>         
+          <div className="flex justify-center items-center font-semibold text-xl h-screen">No Bookings Found!</div>         
           <BottomNav />
         </div>
       );  

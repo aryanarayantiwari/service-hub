@@ -2,14 +2,17 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import AppContext from "../AppContext";
+import FirestoreContext from "../FirestoreContext";
 function SignUp() {
   const navigate = useNavigate();
   const { handleCity, handleProfession, providerDetails, setProviderDetails, city, profession } =
     useContext(AppContext);
+  const {addServicePerson} = useContext(FirestoreContext)
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setProviderDetails({ ...providerDetails , city:city, profession:profession});
+    addServicePerson()
     navigate("/serviceprofile");
   };
 
@@ -41,6 +44,7 @@ function SignUp() {
           <select
             className="outline-none border border-black"
             onChange={handleCity}
+            required
           >
             <option value="" selected disabled>Select City</option>
             <option value="Indore">Indore</option>
@@ -55,6 +59,7 @@ function SignUp() {
             type="text"
             className="border border-black outline-none focus-within:border-green-500"
             onChange={handleProfession}
+            required
           />
         </div>
         <div className="flex justify-between">
