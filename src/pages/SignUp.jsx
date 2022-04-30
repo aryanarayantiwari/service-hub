@@ -55,12 +55,24 @@ function SignUp() {
         </div>
         <div className="flex w-full justify-between">
           <label className="font-semibold">Profession</label>
-          <input
+          {/* <input
             type="text"
             className="border border-black outline-none focus-within:border-green-500"
             onChange={handleProfession}
             required
-          />
+          /> */}
+          <select onChange={handleProfession} required>
+            <option disabled selected>Select Profession</option>
+            <option value="Beauty and Spa">Beauty and Spa</option>
+            <option value="Appliance Repair">Appliance Repair</option>
+            <option value="Home Cleaning">Home Cleaning</option>
+            <option value="Carpenter">Carpenter</option>
+            <option value="Paints">Paints</option>
+            <option value="Pest Control">Pest Control</option>
+            <option value="Moving Homes">Moving Homes</option>
+            <option value="Plumber">Plumber</option>
+            <option value="Electrician">Electrician</option>
+          </select>
         </div>
         <div className="flex justify-between">
           <label className="font-semibold">Upload Verification Documents</label>

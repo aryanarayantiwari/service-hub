@@ -109,7 +109,6 @@ function BookService({ service }) {
                   value="5:00 PM"
                   onChange={handleChange}
                   className="radio"
-                  defaultChecked
                 />
                 <label htmlFor="num3" className="text-sm">
                   05:00 PM
@@ -149,7 +148,6 @@ function BookService({ service }) {
                 name="payment"
                 value="Credit Card"
                 onChange={handlePayment}
-                defaultChecked
               />
               <label className="text-base font-semibold ml-1 mt-1">
                 Credit Card

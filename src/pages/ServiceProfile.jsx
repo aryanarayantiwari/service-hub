@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom"
-import { UserCircleIcon, CalendarIcon } from "@heroicons/react/solid"
 import ProfileCom from "../components/ServiceProvider/ProfileCom"
 import { useContext } from "react"
 import AppContext from "../AppContext"
@@ -22,20 +20,6 @@ function ServiceProfile() {
     {/* Service Profile */}
     <ProfileCom/>
     {/* Bottom Navigation */}
-      <div className="flex justify-around fixed bg-white bottom-0 w-full">
-      <div className="flex flex-col items-center justify-center">
-        <Link exact to="/serviceprofile">
-          <UserCircleIcon className="w-6 h-6 cursor-pointer  text-indigo-500" />
-        </Link>
-        Profile
-      </div>
-      <div className="flex flex-col items-center justify-center">
-        <Link to="/servicebook">
-          <CalendarIcon className="w-6 h-6 cursor-pointer  text-indigo-500" />
-        </Link>
-        Manage Bookings
-      </div>
-      </div>
     </>
   )} else {
     return(

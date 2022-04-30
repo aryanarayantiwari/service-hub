@@ -10,12 +10,21 @@ import { Link } from "react-router-dom";
 import {useContext} from "react"
 import AppContext from "../../AppContext";
 import FirestoreContext from "../../FirestoreContext";
+import IsSigned from "../IsSigned";
 function ProfileCom() {
   const { setIsSignedIn } = useContext(AppContext)
   const {servicePerson} = useContext(FirestoreContext)
   const handleSignOut = () => {
     setIsSignedIn(false)
   }
+  if(servicePerson === undefined){
+    return(
+      <div className="flex h-screen flex-col justify-center items-center">
+      <h2>Please Sign Up as a Professional First</h2>
+      <Link to="/" className="bg-green-500 px-2 py-1 rounded">Go</Link>
+      </div>
+    )
+  } else {
   return (
     <>
       <div className="flex w-full items-start px-2 py-2">
@@ -61,8 +70,23 @@ function ProfileCom() {
           Manage Bookings
         </div>
       </div>
+      <div className="flex justify-around fixed bg-white bottom-0 w-full">
+      <div className="flex flex-col items-center justify-center">
+        <Link exact to="/serviceprofile">
+          <UserCircleIcon className="w-6 h-6 cursor-pointer  text-indigo-500" />
+        </Link>
+        Profile
+      </div>
+      <div className="flex flex-col items-center justify-center">
+        <Link to="/servicebook">
+          <CalendarIcon className="w-6 h-6 cursor-pointer  text-indigo-500" />
+        </Link>
+        Manage Bookings
+      </div>
+      </div>
     </>
   );
+  }
 }
 
 export default ProfileCom;
