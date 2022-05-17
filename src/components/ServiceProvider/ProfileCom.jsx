@@ -2,7 +2,6 @@ import {
   BellIcon,
   LogoutIcon,
   StarIcon,
-  ServerIcon,
   UserCircleIcon,
   CalendarIcon,
 } from "@heroicons/react/solid";
@@ -46,10 +45,6 @@ function ProfileCom() {
         <StarIcon className="w-7 h-7 text-gray-500" />
         Feedback Received
       </div>
-      <Link to="/about" className="flex cursor-pointer w-52 rounded-md py-1 hover:bg-blue-200 mx-2 px-2 mt-8 mb-4 items-center text-lg font-semibold">
-        <ServerIcon className="w-7 h-7 text-gray-500" />
-        About ServiceHub
-      </Link>
       <Link to="/" onClick={handleSignOut} className="flex cursor-pointer w-52 rounded-md py-1 hover:bg-blue-200 mx-2 px-2 my-8 items-center text-lg font-semibold">
         <LogoutIcon className="w-7 h-7 text-gray-500"  />
         Sign Out

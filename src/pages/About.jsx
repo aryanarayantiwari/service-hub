@@ -1,5 +1,11 @@
 import Navbar from "../components/Navbar";
+import BottomNav from "../components/BottomNav";
+import { useContext } from "react";
+import AppContext from "../AppContext";
+import IsSigned from "../components/IsSigned";
 function About() {
+  const { isSignedIn } = useContext(AppContext);
+  if(isSignedIn){
   return (
     <>
       <Navbar />
@@ -18,9 +24,15 @@ function About() {
           time and date.
         </div>
         <img src="../images/services.jpg" alt="" />
+        <BottomNav />
       </div>
     </>
   );
+  } else {
+    return(
+      <IsSigned />
+    )
+  }
 }
 
 export default About;

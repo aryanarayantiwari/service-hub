@@ -38,10 +38,12 @@ function UserProfile() {
         <StarIcon className="w-7 h-7 text-gray-500" />
         Rate us
       </div>
+      <Link to="/about">
       <div className="flex cursor-pointer w-52 rounded-md py-1 hover:bg-blue-200 mx-2 px-2 mt-8 mb-4 items-center text-lg font-semibold">
         <ServerIcon className="w-7 h-7 text-gray-500" />
         About ServiceHub
       </div>
+      </Link>
       <Link to="/" onClick={logOut} className="flex cursor-pointer w-52 rounded-md py-1 hover:bg-blue-200 mx-2 px-2 my-8 items-center text-lg font-semibold">
         <LogoutIcon className="w-7 h-7 text-gray-500" />
         Sign Out
