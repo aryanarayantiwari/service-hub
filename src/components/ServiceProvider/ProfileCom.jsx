@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 import {useContext} from "react"
 import AppContext from "../../AppContext";
 import FirestoreContext from "../../FirestoreContext";
-import IsSigned from "../IsSigned";
 function ProfileCom() {
   const { setIsSignedIn } = useContext(AppContext)
   const {servicePerson} = useContext(FirestoreContext)

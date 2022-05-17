@@ -1,8 +1,8 @@
-import CustomNav from "../components/CustomNav";
+import Navbar from "../components/Navbar";
 function About() {
   return (
     <>
-      <CustomNav />
+      <Navbar />
       <div className="h-screen">
         <div className="font-semibold mx-5 my-14 md:flex md:justify-center md:items-center block text-justify">
           ServiceHub is a website – based service marketplace that connects

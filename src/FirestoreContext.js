@@ -16,7 +16,6 @@ const FirestoreContext = createContext();
 export const FiresotreProvider = ({ children }) => {
   const [userbookings, setuserbookings] = useState([]);
   const [servicePerson, setServicePerson] = useState({})
-  // const [plumberBookings, setplumberBookings] = useState([])
   const {
     customerDetails,
     service,
@@ -35,12 +34,7 @@ export const FiresotreProvider = ({ children }) => {
   // queries
   const q = query(colRef, where("email", "==", customerDetails.email));
   const q2 = query(serviceRef, where("email", "==", providerDetails.email));
-  // const q3 = query(colRef, where("service", "==", servicePerson.profession));
-
-  // const getSerivceBookings = () => {
-  //   getServicePerson()
-  //   getPlumber()
-  // }
+  
 
   const getBookings = () => {
     onSnapshot(q, (snapshot) => {
@@ -52,15 +46,6 @@ export const FiresotreProvider = ({ children }) => {
     });
   };
 
-  // const getPlumber = () => {
-  //   onSnapshot(q3, (snapshot) => {
-  //     let bookings = [];
-  //     snapshot.docs.forEach((doc) => {
-  //       bookings.push({ ...doc.data(), id: doc.id });
-  //       setplumberBookings(bookings);
-  //     });
-  //   });
-  // };
   
   const addBooking = () => {
     addDoc(colRef, {
@@ -77,10 +62,8 @@ export const FiresotreProvider = ({ children }) => {
   };
 
   const deleteBooking = (id) => {
-    console.log(id);
     const docRef = doc(db, "bookings", id);
     deleteDoc(docRef).then(() => {
-      console.log("deleted");
       getBookings();
     });
   };
@@ -109,14 +92,11 @@ export const FiresotreProvider = ({ children }) => {
       value={{
         userbookings,
         servicePerson,
-        // plumberBookings,
         addBooking,
         deleteBooking,
         getBookings,
         addServicePerson,
         getServicePerson,
-        // getPlumber,
-        // getSerivceBookings,
       }}
     >
       {children}

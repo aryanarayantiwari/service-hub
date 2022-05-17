@@ -9,6 +9,7 @@ import { useContext } from "react";
 import AppContext from "../AppContext";
 import BottomNav from "../components/BottomNav";
 import IsSigned from '../components/IsSigned'
+import Navbar from "../components/Navbar";
 function UserProfile() {
   const { customerDetails, setIsSignedIn, isSignedIn } = useContext(AppContext);
   const logOut = () => {
@@ -17,11 +18,7 @@ function UserProfile() {
   if(isSignedIn){
   return (
     <>
-      <nav className="text-white text-xl font-semibold flex bg-gray-800 py-3 justify-between px-2 items-center relative">
-        <Link to="/" className="md:block font-light">
-          Service<span className="font-semibold">Hub</span>
-        </Link>
-      </nav>
+      <Navbar />
       <div className="flex w-full items-start px-2 py-2">
         <img
           className="rounded-full w-16 h-16"

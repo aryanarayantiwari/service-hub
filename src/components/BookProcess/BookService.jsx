@@ -13,11 +13,12 @@ function BookService({ service }) {
     setBookingTime,
     setAddress,
     setPaymentMethod,
+    handleLocation,
   } = useContext(AppContext);
   setService(service);
   const d = new Date();
   let date = d.getDate();
-  let month = d.getMonth();
+  let month = d.getMonth() + 1;
   let todaysdate = `2022-${
     month < 10 ? "0" + month.toString() : date.toString()
   }-${date < 10 ? "0" + date.toString() : date.toString()}`;
@@ -48,6 +49,13 @@ function BookService({ service }) {
         <form onSubmit={handleSubmit}>
           {/* Select Address */}
           <div className="px-2 py-2 flex items-center justify-start space-x-5">
+          <select name="user-location" onChange={handleLocation} className="outline-none">
+            <option defaultValue="user-location" disabled selected>Select Location</option>
+            <option defaultValue="Indore">Indore</option>
+            <option defaultValue="Mumbai">Mumbai</option>
+            <option defaultValue="Delhi">Delhi</option>
+            <option defaultValue="Banglore">Banglore</option>
+          </select>
             <label htmlFor="address" className="text-sm font-semibold">
               Enter Address
             </label>

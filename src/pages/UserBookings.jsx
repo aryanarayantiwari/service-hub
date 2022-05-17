@@ -1,14 +1,14 @@
 import AcceptBook from "../components/UserBookings/AcceptBook";
-import CustomNav from "../components/CustomNav";
 import BottomNav from "../components/BottomNav";
 import { useContext } from "react";
 import FirestoreContext from "../FirestoreContext";
+import Navbar from "../components/Navbar";
 function UserBookings() {
   const { userbookings } = useContext(FirestoreContext)
   if(userbookings.length > 0){
     return (
       <div>
-        <CustomNav />
+        <Navbar />
        {
          userbookings.map((booking) => {
            return(
@@ -24,7 +24,7 @@ function UserBookings() {
      else {
       return (
         <div>
-          <CustomNav />
+          <Navbar />
           <div className="flex justify-center items-center font-semibold text-xl h-screen">No Bookings Found!</div>         
           <BottomNav />
         </div>

@@ -55,12 +55,7 @@ function SignUp() {
         </div>
         <div className="flex w-full justify-between">
           <label className="font-semibold">Profession</label>
-          {/* <input
-            type="text"
-            className="border border-black outline-none focus-within:border-green-500"
-            onChange={handleProfession}
-            required
-          /> */}
+       
           <select onChange={handleProfession} required>
             <option disabled selected>Select Profession</option>
             <option value="Beauty and Spa">Beauty and Spa</option>
